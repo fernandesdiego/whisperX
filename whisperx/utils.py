@@ -284,7 +284,7 @@ class SubtitlesWriter(ResultWriter):
                 sstart, ssend, speaker = _[0]
                 subtitle_start = self.format_timestamp(sstart)
                 subtitle_end = self.format_timestamp(ssend)
-                if result["language"] in LANGUAGES_WITHOUT_SPACES:
+                if "language" in result and result["language"] in LANGUAGES_WITHOUT_SPACES:
                     subtitle_text = "".join([word["word"] for word in subtitle])
                 else:
                     subtitle_text = " ".join([word["word"] for word in subtitle])
